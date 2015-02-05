@@ -1,0 +1,180 @@
+/************************** SERVER_SEND_ERROR ****************************/
+{
+    "QueryID": 10
+}
+/************************** SERVER_SEND_LIST_CONTACTS ****************************/
+/************************** CLIENT_SEND_LIST_CONTACTS ****************************/
+/************************** CLIENT_SEND_NEW_LIST_CONTACTS_NAME ****************************/    
+   [
+        {
+				"UserID": "123123",
+                "ContactID": "12210",
+                "FacebookID": "ngan.tuyet.3",
+                "ContactName": "Ngan Tuyet",
+                "Avatar": "URL",
+                "Location": "Ho Chi Minh"
+            
+        },
+        {
+				"UserID": "123123",
+                "ContactID": "12210",
+                "FacebookID": "ngan.tuyet.3",
+                "ContactName": "Ngan Tuyet",
+                "Avatar": "URL",
+                "Location": "Ho Chi Minh"
+        }
+    ]
+/************************** SERVER_SEND_LIST_INBOXES ****************************/
+[
+	{
+                "UserID": "123123",
+                "InboxID": "12210",
+                "CategoryID": 2,
+                "Date": "Date",
+                "ContentText": "hkc dedew",
+                "ContentVoice": "URL",
+                "isPublic": true
+	},
+    {
+                "UserID": "123123",
+                "InboxID": "12210",
+                "CategoryID": 2,
+                "Date": "Date",
+                "ContentText": "hkc dedew",
+                "ContentVoice": "URL",
+                "isPublic": true
+	}
+]
+/************************** SERVER_SEND_DELETE_INBOXES ****************************/
+/************************** CLIENT_SEND_DELETE_INBOXES ****************************/
+{
+    "QueryID": 14,
+    "UserID": "123123",
+    "InboxesID": [
+        123232,
+        132132
+    ]
+}
+/************************** SERVER_SEND_LIST_OUTBOXES ****************************/
+/************************** SERVER_SEND_LIST_NEW_CONFESSIONS ****************************/
+{
+    "QueryID": 15,
+    "UserID": "123123",
+    "Outboxes": [
+        {
+            "Outbox": {
+                "InboxID": "12210",
+                "ContactID": "3231321",
+                "CategoryID": 2,
+                "Date": "Date",
+                "ContentText": "hkc dedew",
+                "ContentVoice": "URL",
+                "isSent": true
+            }
+        },
+        {
+            "Outbox": {
+                "InboxID": "12210",
+                "ContactID": "3231321",
+                "CategoryID": 2,
+                "Date": "Date",
+                "ContentText": "hkc dedew",
+                "ContentVoice": "URL",
+                "isSent": true
+            }
+        }
+    ]
+}
+/************************** SERVER_SEND_DELETE_OUTBOXES ****************************/
+/************************** CLIENT_SEND_DELETE_OUTBOXES ****************************/
+{
+    "QueryID": 16,
+    "UserID": "123123",
+    "OutboxesID": [
+        123232,
+        132132
+    ]
+}
+/************************** SERVER_SEND_LIST_DRAFTS ****************************/
+/************************** CLIENT_SEND_LIST_DRAFTS ****************************/
+{
+    "QueryID": 17,
+    "UserID": "123123",
+    "Outboxes": [
+        {
+            "Outbox": {
+                "InboxID": "12210",
+                "ContactID": "3231321",
+                "CategoryID": 2,
+                "Date": "Date",
+                "ContentText": "hkc dedew",
+                "ContentVoice": "URL",
+                "isSent": false
+            }
+        },
+        {
+            "Outbox": {
+                "InboxID": "12210",
+                "ContactID": "3231321",
+                "CategoryID": 2,
+                "Date": "Date",
+                "ContentText": "hkc dedew",
+                "ContentVoice": "URL",
+                "isSent": false
+            }
+        }
+    ]
+}
+/************************** SERVER_SEND_DELETE_DRAFTS ****************************/
+/************************** CLIENT_SEND_DELETE_DRAFTS ****************************/
+{
+    "QueryID": 18,
+    "UserID": "123123",
+    "DraftsID": [
+        123232,
+        132132
+    ]
+}
+/************************** SERVER_SEND_CHECK_VALIDATE_FACEBOOKID ****************************/
+{
+    "QueryID": 59,
+    "FacebookID": "123123",
+    "Validate": true
+}
+
+
+/************************** CLIENT_SEND_USER_INFO ****************************/
+{
+    "QueryID": 11,
+    "User": {
+        "UserID": "12210",
+        "FacebookID": "ngan.tuyet.3",
+        "UserName": "Ngan Tuyet",
+    }
+}
+/************************** CLIENT_REQUEST_LIST_CONTACTS ****************************/
+/************************** CLIENT_REQUEST_LIST_INBOXES ****************************/
+/************************** CLIENT_REQUEST_LIST_OUTBOXES ****************************/
+/************************** CLIENT_REQUEST_LIST_DRAFTS ****************************/
+{
+    "QueryID": 52
+}
+/************************** CLIENT_SEND_CONFESSION ****************************/
+{
+    "QueryID": 58,
+    "UserID": "123123",
+    "Outbox": {
+        "InboxID": "12210",
+        "ContactID": "3231321",
+        "CategoryID": 2,
+        "Date": "Date",
+        "ContentText": "hkc dedew",
+        "ContentVoice": "URL",
+        "isSent": true
+  }
+}  
+/************************** CLIENT_SEND_CHECK_VALIDATE_FACEBOOKID ****************************/
+{
+    "QueryID": 59,
+    "FacebookID": "123123"
+}

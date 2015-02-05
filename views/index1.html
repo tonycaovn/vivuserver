@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta property="og:site_name" content="Vivu"/>
+	    <meta property="og:url" content="http://vivu.uni.me:3000//cfs/audio/<%=sourceid %>"/>
+	    <meta property="og:title" content="Vivu Confession"/>
+	    <meta property="og:description" content="audio description"/>
+	    <meta property="og:type" content="video"/>
+	    <meta property="og:image" content="http://cloudfront.ambiance.urbanapps.com/images/icon_256_rounded.png"/>
+	    <meta property="og:video" content="http://vivu.uni.me:8888/public/audio/<%=sourceid %>.mp3"/>
+	    <meta property="og:video:type" content="application/x-shockwave-flash"/>
+	    <meta property="og:video:width" content="460"/>
+	    <meta property="og:video:height" content="98"/>
+	    <meta property="fb:app_id" content="522894467748477"/>
+	    
+	   <title>Vivu</title>
+	    <script type="text/javascript" src="http://vivu.uni.me:8888/public/javascript/jquery.js"></script> 
+	    <script type="text/javascript" src="http://vivu.uni.me:8888/public/javascript/script.js"></script> 
+	</head>
+	<body>
+		<div id="container" style="margin-left:auto;margin-right:auto;width:200px">
+			<a href="http://vivu.uni.me" style="float:left;margin-left:30px"><image src="http://vivu.uni.me:8888/public/image/vivulogo.png"></image></a>
+			<h1 style="font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;float:left">
+				<span style="color:blue;float:left;">V</span>
+				<span style="color:green;float:left;">i</span>
+				<span style="color:red;float:left;">v</span>
+				<span style="color:orange;float:left;">u</span>
+			</h1>
+			
+			<div id="audioPlayer" style="clear:both">
+				<object id=mainplayer type='application/x-shockwave-flash' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0' width='200' height='20' id='dewplayer' name='dewplayer' data="http://54.214.9.117:8888/public/flash/musicplayer.swf">
+					<param name='movie' value='http://54.214.9.117:8888/public/flash/musicplayer.swf'/>
+					<param name='flashvars' value="mp3=<%=sourceurl %>&amp;autostart=1"/>
+					<param name='wmode' value='transparent'/>
+				</object>
+			</div>
+		</div>
+	</body>
+</html>

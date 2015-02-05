@@ -1,0 +1,190 @@
+// user services
+
+add a new user
+vi du 1:
+curl -i -X POST -H 'Content-Type: application/json' -d '{"UserID": "12210", "FacebookID": "ngan.tuyet.3", "UserName": "Ngan Tuyet", "Location":"Vietnam","UrlAvatar":"https://www.facebook.com/photo.php?1"}' http://54.214.9.117:3000/services/users
+
+
+vi du 2:
+curl -i -X POST -H 'Content-Type: application/json' -d '{"UserID": "12211", "FacebookID": "thanhcao.3", "UserName": "Cao Thanh" , "Location":"Vietnam","UrlAvatar":"https://www.facebook.com/photo.php?1"}' http://54.214.9.117:3000/services/users
+
+get all user
+curl -i -X GET http://54.214.9.117:3000/services/users
+
+get a user by userid
+curl -i -X GET http://54.214.9.117:3000/services/users/12210
+
+get a user by username
+curl -i -X POST -H 'Content-Type: application/json' -d '{"UserName": "Ngan Tuyet"}' http://54.214.9.117:3000/services/users/searchname
+
+delete a user by userid
+curl -i -X DELETE http://54.214.9.117:3000/services/users/12210
+
+update user by userid
+curl -i -X PUT -H 'Content-Type: application/json' -d '{"UserID": "12211", "FacebookID": "thanhcao.3", "UserName": "Cao Thanh 1" , "Location":"Vietnam","UrlAvatar":"https://www.facebook.com/photo.php?1"}' http://54.214.9.117:3000/services/users/12210
+
+delete all user
+curl -i -X DELETE http://54.214.9.117:3000/services/users
+
+
+// contact services
+
+// get all contact
+curl -i -X GET http://54.214.9.117:3000/services/contacts
+
+// add list contact
+vd1:
+curl -i -X POST -H 'Content-Type: application/json' -d '
+[
+	{
+	 "UserID": "123123",
+	 "ContactID": "12210",
+	 "FacebookID": "cao.thanh",
+	 "ContactName": "Cao THanh",
+	 "Avatar": "URL",
+	 "Location": "Ho Chi Minh"
+	},
+	{
+	 "UserID": "123123",
+	 "ContactID": "12211",
+	 "FacebookID": "nha.nguyen",
+	 "ContactName": "Nha Nguyen",
+	 "Avatar": "URL",
+	 "Location": "Ho Chi Minh"
+	},
+	{
+	 "UserID": "123123",
+	 "ContactID": "12212",
+	 "FacebookID": "ngan.tuyet",
+	 "ContactName": "Ngan Tuyet",
+	 "Avatar": "URL",
+	 "Location": "Ha Noi"
+	}
+]' http://54.214.9.117:3000/services/contacts
+    
+vd2:
+curl -i -X POST -H 'Content-Type: application/json' -d '
+[
+	{
+	 "UserID": "123122",
+	 "ContactID": "12215",
+	 "FacebookID": "phuongvl",
+	 "ContactName": "Phuong Vo",
+	 "Avatar": "URL",
+	 "Location": "Ho Chi Minh"
+	},
+	{
+	 "UserID": "123122",
+	 "ContactID": "12216",
+	 "FacebookID": "quang.tran",
+	 "ContactName": "Quang Tran",
+	 "Avatar": "URL",
+	 "Location": "Ho Chi Minh"
+	},
+	{
+	 "UserID": "123122",
+	 "ContactID": "12217",
+	 "FacebookID": "nhan.sieunhan",Contact
+	 "ContactName": "Nhan sieu nhan",
+	 "Avatar": "URL",
+	 "Location": "Ha Noi"
+	}
+]' http://54.214.9.117:3000/services/contacts
+    
+                
+// get all contact by user id
+curl -i -X GET http://54.214.9.117:3000/services/contacts/byuserid/123123
+
+// delete all contacts
+curl -i -X DELETE http://54.214.9.117:3000/services/contacts
+
+
+//--------------------------------------- inbox --------------------------//
+
+// add a inbox
+curl -i -X POST -H 'Content-Type: application/json' -d '
+{
+    "UserID": "100001614353884",
+    "ContentText": "hula",
+    "isPublic": false,
+    "Date": "2013 May 08 03:01",
+    "CategoryID": 2,
+    "ContentVoice": "vivu.uni.me/cfs/audio/45",
+    "InboxID": 16,
+    "PostID": "",
+    "isRead": false
+  }' 
+http://54.214.9.117:3000/services/inboxs
+
+// get all inbox
+curl -i -X GET http://54.214.9.117:3000/services/inboxs
+
+
+//delete all inbox
+curl -i -X DELETE http://54.214.9.117:3000/services/inboxs
+
+//update Inbox by Inbox Id
+curl -i -X PUT -H 'Content-Type: application/json' -d '{
+    "UserID": "100000427327845",
+    "ContentText": "im testing here sorry",
+    "isPublic": false,
+    "Date": "2013 May 08 03:01",
+    "CategoryID": 2,
+    "ContentVoice": "http://audio.com/1",
+    "InboxID": 16,
+    "PostID": "",
+    "isRead": false
+  }' http://54.214.9.117:3000/services/inboxs
+
+//update Inbox many inbox
+curl -i -X PUT -H 'Content-Type: application/json' -d '[
+{
+    "UserID": "100000427327845",
+    "ContentText": "A",
+    "isPublic": false,
+    "Date": "2013 May 08 03:01",
+    "CategoryID": 2,
+    "ContentVoice": "http://audio.com/1",
+    "InboxID": 16,
+    "PostID": "",
+    "isRead": false
+  },
+  {
+    "UserID": "100000427327845",
+    "ContentText": "B",
+    "isPublic": false,
+    "Date": "2013 May 08 03:01",
+    "CategoryID": 2,
+    "ContentVoice": "http://audio.com/1",
+    "InboxID": 17,
+    "PostID": "",
+    "isRead": false
+  }
+  ]' http://54.214.9.117:3000/services/inboxs
+
+//delete inbox
+curl -i -X POST -H 'Content-Type: application/json' -d '
+[
+	{"InboxID":16},
+	{"InboxID":17}
+]' 
+http://54.214.9.117:3000/services/inboxs/delete
+
+
+
+//-------------------------------------- devices ---------------------------------//
+// add devices
+curl -i -X POST -H 'Content-Type: application/json' -d '{
+	"UserID": "12210", 
+	"DeviceID": "1111"}' 
+	http://54.214.9.117:3000/services/devices
+	
+	
+//delete all devices
+curl -i -X DELETE http://54.214.9.117:3000/services/devices	
+
+//get all devices
+curl -i -X GET http://54.214.9.117:3000/services/devices	
+
+//get all devices by userid
+curl -i -X GET http://54.214.9.117:3000/services/devices/byuserid/12210
